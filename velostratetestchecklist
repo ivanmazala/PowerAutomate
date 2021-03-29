@@ -1,0 +1,35 @@
+GCP Setup
+----------------
+IAM Roles Created for Velostrata
+GCP firewall rules  443, 9111, 9119, 3260," allowing the required traffic in from the Customer site
+Velostrata manager deployed into the project from the Marketplace
+
+Vcenter and On-Premises Setup  Setup
+-----------------
+Deploy Velostrata Appliance in Vmware environment (Post all access is provided to HCL)
+Necessary firewall rules to allow the Backend Appliance to communicate w/ the Velostrata Manager in GCP by opening  ports 443, 9111, 9119 and 3260 between GCP Velostrata Deployment
+manager and vCenter OVA
+
+Test Phase 
+-----------------
+Identify the Test VM for Migration 
+From the vSphere Web Client, select the desired Virtual Machine.
+Select Velostrata Operations > Test Clone, Run In Cloud, Full Migration and Offline Migfration Approach testing will be done with all 4 approaches 
+Select your Cloud Extension.
+Name the Cloud VM
+Select the Project and Instance Type.
+For the Storage Policy, select Write Back or Write Isolation.
+Select the Subnet on GCP for the VM.
+Enter any Network Tags (comma separated) which will be applied to the migrated VM.
+Configure Private IP by selecting auto assign from an available IP address from the subnet, or select a static IP address
+From the Edge Node drop-down list, select the primary node in your Cloud Extension that will handle the migration.
+For External IP address, assign an external IP address
+Select the Disk Type for your instance and Service Account that hosts the worker instance handling the migration.
+
+Troubleshooting Replication Errors as applicable. 
+------------------
+
+Detaching/clean a VM (Migration)
+------------------
+
+Validate the Infra Checks with Server ping, IP, Disks, Connectivity, Errors, Reachability from different locations, Licenses activation etc. 
